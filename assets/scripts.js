@@ -22,6 +22,17 @@ $(document).ready(function () {
         '5:00 PM',
     ];
 
+    // Set local storage variables
+    var storedItems_9 = localStorage.getItem(storedItems_9) || [];
+    var storedItems_10 = localStorage.getItem(storedItems_10) || [];
+    var storedItems_11 = localStorage.getItem(storedItems_11) || [];
+    var storedItems_12 = localStorage.getItem(storedItems_12) || [];
+    var storedItems_13 = localStorage.getItem(storedItems_13) || [];
+    var storedItems_14 = localStorage.getItem(storedItems_14) || [];
+    var storedItems_15 = localStorage.getItem(storedItems_15) || [];
+    var storedItems_16 = localStorage.getItem(storedItems_16) || [];
+    var storedItems_17 = localStorage.getItem(storedItems_17) || [];
+
     //---------------
     // Loop to make table based on length of hours array
     //---------------
@@ -76,28 +87,68 @@ $(document).ready(function () {
     //---------------
     // Add content of text area to local storage on save, and display
     //---------------
+    // save button click event 
+    //TODO Figure out how to loop the local storage!!
+    $('.saveBtn').on('click', function (e) {
+        e.preventDefault();
 
-    //TODO ADD COMMENTS - something needs to be stringified
-    function init() {
-        for (var k = 9; k < 18; k++) {
-            var dataHour = [k];
+        // Use data-hour to drive logic around what text areas to populate
+        var id = $(this).data('hour');
 
-            $(`#${dataHour}text`)
-                .eq(k - 9)
-                .val(localStorage.getItem(hours[k - 9]) || []);
+        // Set the new data items
+        var task = {
+            hour: $(this).data('hour'),
+            message: $('#' + id + 'text').val(),
+        };
+
+        if ($(this).data('hour') === 9) {
+            storedItems_9.push(task);
+            localStorage.setItem('9', JSON.stringify(task.message));
         }
-        console.log(localStorage);
-    }
-    init();
+        if ($(this).data('hour') === 10) {
+            storedItems_10.push(task);
+            localStorage.setItem('10', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 11) {
+            storedItems_11.push(task);
+            localStorage.setItem('11', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 12) {
+            storedItems_12.push(task);
+            localStorage.setItem('12', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 13) {
+            storedItems_13.push(task);
+            localStorage.setItem('13', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 14) {
+            storedItems_14.push(task);
+            localStorage.setItem('14', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 15) {
+            storedItems_15.push(task);
+            localStorage.setItem('15', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 16) {
+            storedItems_16.push(task);
+            localStorage.setItem('16', JSON.stringify(task.message));
+        }
+        if ($(this).data('hour') === 17) {
+            storedItems_17.push(task);
+            localStorage.setItem('17', JSON.stringify(task.message));
+        }
+    });
 
-    //TODO ADD COMMENTS
-    //     $('.saveBtn').click(function () {
-    //         var todo = $(this).siblings('.taskText').val();
-    //         console.log();
-    //         console.log(todo);
-    //         var timeSlot = $(this).siblings('.time').attr('data-hour');
-    //         console.log(timeSlot);
-
-    //         localStorage.setItem(timeSlot, todo);
-    //     });
+    // Pull local storage for display
+    window.onload = function () {
+        $('#9text').val(JSON.parse(localStorage.getItem('9')));
+        $('#10text').val(JSON.parse(localStorage.getItem('10')));
+        $('#11text').val(JSON.parse(localStorage.getItem('11')));
+        $('#12text').val(JSON.parse(localStorage.getItem('12')));
+        $('#13text').val(JSON.parse(localStorage.getItem('13')));
+        $('#14text').val(JSON.parse(localStorage.getItem('14')));
+        $('#15text').val(JSON.parse(localStorage.getItem('15')));
+        $('#16text').val(JSON.parse(localStorage.getItem('16')));
+        $('#17text').val(JSON.parse(localStorage.getItem('17')));
+    };
 });
