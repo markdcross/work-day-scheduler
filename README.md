@@ -4,7 +4,7 @@ Create a simple calendar application that allows the user to save events for eac
 
 # Usage
 
-![Screenshot](./assets/img/screenshot.pngscreenshot.png)
+![Screenshot](./assets/img/screenshot.png)
 
 The Work Day Scheduler dynamically creates rows based on the users work hours (default 9am-5pm). If a time block is in the past, the box color is gray. If the box represents the current hour, the color is red. If the box represents time in the future, the color is green.
 
