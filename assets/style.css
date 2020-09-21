@@ -3,6 +3,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
+    background-color: #8e8c84;
+    color: #f8f5f0;
 }
 
 textarea {
@@ -14,19 +16,23 @@ textarea {
     padding: 10px;
 }
 
+thead {
+    background-color: #3e3f3a;
+    color: #f8f5f0;
+}
 
 /* Jumbotron */
 .jumbotron {
     text-align: center;
     background-color: transparent;
-    color: black;
+    color: #f8f5f0;
     border-radius: 0;
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #f8f5f0;
 }
 
 .small-hr {
     width: 20%;
-    background-color: #7f8c8d;
+    background-color: #f8f5f0;
     height: 1px;
 }
 
@@ -48,23 +54,8 @@ textarea {
 
 .hour {
     background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
-}
-
-.past {
-    background-color: #d3d3d3;
-    color: white;
-}
-
-.present {
-    background-color: #ff6961;
-    color: white;
-}
-
-.future {
-    background-color: #77dd77;
-    color: white;
+    color: ##f8f5f0;
+    border-top: 1px dashed ##f8f5f0;
 }
 
 .saveBtn {
